@@ -6,7 +6,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+//    this->setStyleSheet("background-color:#ccc");
     initMainWindow();
+
+
 }
 
 MainWindow::~MainWindow()
@@ -45,6 +49,16 @@ scene->setSceneRect(0,vnum,this->width()-hnum,this->height());
 view->setScene(scene);
 
 
+//添加右侧tab键
+tabWid=new QTabWidget(this);
+tabWid->resize(300,this->height()-vnum);
+tab1=new QWidget();
+tab2=new QWidget();
+tabWid->addTab(tab1,"tab1");
+//tabWid->addTab(tab2,"tab2");
+tabWid->setCurrentIndex(0);
+tabWid->setCurrentIndex(1);
+tabWid->move(this->width()-300,vnum);
 
 
 }

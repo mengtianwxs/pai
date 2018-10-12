@@ -44,6 +44,12 @@ private:
      int const vnum=27;
      int const hnum=300;
 
+     QTabWidget *tabWid;
+     QWidget *tab1;
+     QWidget *tab2;
+
+
+
 
 };
 

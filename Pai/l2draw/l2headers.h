@@ -14,6 +14,9 @@
 
 #include<QPointF>
 
+#include<QTabWidget>
+#include<QWidget>
+
 
 //////////////////////////////////
 /// 事件
