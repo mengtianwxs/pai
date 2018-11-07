@@ -1,31 +1,32 @@
 #include "l2snakebar.h"
 
-l2snakebar::l2snakebar(float width, float height, float uHeight, float dHeight)
+l2snakebar::l2snakebar(float width, float height, float upd, float dod)
 {
 
 
- this->w=width;
- this->h=height;
- this->hu=uHeight;
- this->hd=dHeight;
- this->hm=h-hu-hd;
- this->edgeC=l2utils::T_C(w*w,hm*hm);
+    this->width=width;
+    this->height=height;
+    this->upd=upd;
+    this->dod=dod;
+    this->mid=height-upd-dod;
+    this->cbd=l2utils::T_C(width*width,mid*mid);
 
 
- draw();
+   draw();
+
 }
 
 
 void l2snakebar::draw(){
 
    path.moveTo(0,0);
-   path.lineTo(0,hu);
-   path.lineTo(w,hu+hm);
-   path.lineTo(w,h);
+   path.lineTo(0,upd);
+   path.lineTo(width,upd+mid);
+   path.lineTo(width,height);
 
 
    this->setPath(path);
-   qDebug("this is draw fun");
+   //qDebug("this is draw fun");
 }
 
 //void l2snakebar::mousePressEvent(QGraphicsSceneMouseEvent *event){

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,14 +29,35 @@ SOURCES += \
         mainwindow.cpp \
     l2draw/core/l2bar.cpp \
     l2draw/bars/l2snakebar.cpp \
-    l2draw/methods/l2utils.cpp
+    l2draw/methods/l2utils.cpp \
+    l2draw/db/l2db.cpp \
+    l2draw/bars/l2mbar.cpp \
+    l2draw/bars/l2lebar.cpp \
+    l2draw/bars/l2rebar.cpp \
+    l2draw/bars/l2lbar.cpp \
+    l2draw/bars/l2ubar.cpp \
+    l2draw/bars/l2zbar.cpp \
+    l2draw/bars/l2shipbar.cpp \
+    l2draw/bars/l2ibar.cpp \
+    l2draw/core/l2scene.cpp
 
 HEADERS += \
         mainwindow.h \
     l2draw/l2headers.h \
     l2draw/core/l2bar.h \
     l2draw/bars/l2snakebar.h \
-    l2draw/methods/l2utils.h
+    l2draw/methods/l2utils.h \
+    l2draw/db/l2db.h \
+    l2draw/l2events.h \
+    l2draw/bars/l2mbar.h \
+    l2draw/bars/l2lebar.h \
+    l2draw/bars/l2rebar.h \
+    l2draw/bars/l2lbar.h \
+    l2draw/bars/l2ubar.h \
+    l2draw/bars/l2zbar.h \
+    l2draw/bars/l2shipbar.h \
+    l2draw/bars/l2ibar.h \
+    l2draw/core/l2scene.h
 
 FORMS += \
         mainwindow.ui

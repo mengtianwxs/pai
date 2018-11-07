@@ -104,8 +104,9 @@
      <addaction name="actionR_elephant_bar_2"/>
      <addaction name="actionI_bar"/>
      <addaction name="actionL_bar_2"/>
-     <addaction name="actionZ_bar_2"/>
+     <addaction name="actionU_bar_2"/>
      <addaction name="actionZ_bar_3"/>
+     <addaction name="actionM_bar"/>
      <addaction name="separator"/>
      <addaction name="actionAI_bar_1"/>
      <addaction name="actionAI_bar_3"/>
@@ -130,6 +131,7 @@
     <addaction name="actioninsulator"/>
     <addaction name="actionbusbar_clamp"/>
     <addaction name="menuKnife_Switch"/>
+    <addaction name="actionMCCB"/>
    </widget>
    <widget class="QMenu" name="menueffct">
     <property name="title">
@@ -208,11 +210,6 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actiondraw">
-   <property name="text">
-    <string>snake bar</string>
-   </property>
-  </action>
   <action name="actionbox">
    <property name="text">
     <string>Box</string>
@@ -245,51 +242,6 @@
   <action name="actioncalc">
    <property name="text">
     <string>Calc</string>
-   </property>
-  </action>
-  <action name="actionL_elephant_bar">
-   <property name="text">
-    <string>L elephant bar</string>
-   </property>
-  </action>
-  <action name="actionR_elephant_bar">
-   <property name="text">
-    <string>R elephant bar</string>
-   </property>
-  </action>
-  <action name="actionline_bar">
-   <property name="text">
-    <string>l bar</string>
-   </property>
-  </action>
-  <action name="actionV_line_bar">
-   <property name="text">
-    <string>V line bar</string>
-   </property>
-  </action>
-  <action name="actionU_Bar">
-   <property name="text">
-    <string>ship bar</string>
-   </property>
-  </action>
-  <action name="actionL_bar">
-   <property name="text">
-    <string>L bar</string>
-   </property>
-  </action>
-  <action name="actionZ_bar">
-   <property name="text">
-    <string>Z bar</string>
-   </property>
-  </action>
-  <action name="action1_AI_bar">
-   <property name="text">
-    <string>AI bar 1</string>
-   </property>
-  </action>
-  <action name="actionU_bar">
-   <property name="text">
-    <string>U bar</string>
    </property>
   </action>
   <action name="actionview_mode">
@@ -380,7 +332,7 @@
     <string>L bar</string>
    </property>
   </action>
-  <action name="actionZ_bar_2">
+  <action name="actionU_bar_2">
    <property name="text">
     <string>U bar</string>
    </property>
@@ -543,6 +495,16 @@
   <action name="actionKS2500A">
    <property name="text">
     <string>KS2500A</string>
+   </property>
+  </action>
+  <action name="actionM_bar">
+   <property name="text">
+    <string>M bar</string>
+   </property>
+  </action>
+  <action name="actionMCCB">
+   <property name="text">
+    <string>MCCB</string>
    </property>
   </action>
  </widget>
