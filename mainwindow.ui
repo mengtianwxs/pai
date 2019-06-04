@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1158</width>
+    <height>664</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1158</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionnew"/>
+    <addaction name="actionsave"/>
+    <addaction name="actionopen"/>
+    <addaction name="actionexit"/>
+   </widget>
+   <widget class="QMenu" name="menutools_t">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionsettings"/>
+    <addaction name="actioncalc"/>
+   </widget>
+   <widget class="QMenu" name="menupai_a">
+    <property name="title">
+     <string>Bar</string>
+    </property>
+    <widget class="QMenu" name="menuMaterial">
+     <property name="title">
+      <string>Material</string>
+     </property>
+     <addaction name="actiontml"/>
+     <addaction name="actionlmy"/>
+    </widget>
+    <widget class="QMenu" name="menuquantity">
+     <property name="title">
+      <string>Quantity</string>
+     </property>
+     <addaction name="action1_bar"/>
+     <addaction name="actionbar_2"/>
+    </widget>
+    <widget class="QMenu" name="menushapes">
+     <property name="title">
+      <string>Shapes</string>
+     </property>
+     <addaction name="action15_3"/>
+     <addaction name="action30_4"/>
+     <addaction name="action40_4"/>
+     <addaction name="action50_5"/>
+     <addaction name="action60_6"/>
+     <addaction name="action80_8"/>
+     <addaction name="action80_10"/>
+     <addaction name="action100_8"/>
+     <addaction name="action100_10"/>
+     <addaction name="action120_10"/>
+     <addaction name="action125_10"/>
+    </widget>
+    <addaction name="menuMaterial"/>
+    <addaction name="menuquantity"/>
+    <addaction name="menushapes"/>
+   </widget>
+   <widget class="QMenu" name="menuline_l">
+    <property name="title">
+     <string>Line</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuscence_s">
+    <property name="title">
+     <string>Create</string>
+    </property>
+    <widget class="QMenu" name="menuhole">
+     <property name="title">
+      <string>Hole</string>
+     </property>
+     <addaction name="actionhole_1"/>
+     <addaction name="actionhole_2"/>
+     <addaction name="actionhole_4"/>
+    </widget>
+    <widget class="QMenu" name="menubars">
+     <property name="title">
+      <string>Bars</string>
+     </property>
+     <addaction name="actionsnake_bar"/>
+     <addaction name="actionship_bar"/>
+     <addaction name="actionL_elephant_bar_2"/>
+     <addaction name="actionR_elephant_bar_2"/>
+     <addaction name="actionI_bar"/>
+     <addaction name="actionL_bar_2"/>
+     <addaction name="actionU_bar_2"/>
+     <addaction name="actionZ_bar_3"/>
+     <addaction name="actionM_bar"/>
+     <addaction name="separator"/>
+     <addaction name="actionAI_bar_1"/>
+     <addaction name="actionAI_bar_3"/>
+    </widget>
+    <widget class="QMenu" name="menuKnife_Switch">
+     <property name="title">
+      <string>Knife Switch</string>
+     </property>
+     <addaction name="actionKS200A"/>
+     <addaction name="actionKS400A"/>
+     <addaction name="actionKS600A"/>
+     <addaction name="actionKS1000A"/>
+     <addaction name="actionKS1500A"/>
+     <addaction name="actionKS2000A"/>
+     <addaction name="actionKS2500A"/>
+    </widget>
+    <addaction name="menubars"/>
+    <addaction name="menuhole"/>
+    <addaction name="actionline"/>
+    <addaction name="actionlabel"/>
+    <addaction name="actionbroken_line"/>
+    <addaction name="actioninsulator"/>
+    <addaction name="actionbusbar_clamp"/>
+    <addaction name="menuKnife_Switch"/>
+    <addaction name="actionMCCB"/>
+   </widget>
+   <widget class="QMenu" name="menueffct">
+    <property name="title">
+     <string>Effect</string>
+    </property>
+    <addaction name="actionhole"/>
+    <addaction name="actionauto_label"/>
+   </widget>
+   <widget class="QMenu" name="menuMode">
+    <property name="title">
+     <string>Mode</string>
+    </property>
+    <addaction name="actionline_mode"/>
+    <addaction name="actionview_mode"/>
+    <addaction name="actionplane_mode"/>
+   </widget>
+   <widget class="QMenu" name="menuGenerate">
+    <property name="title">
+     <string>Generate</string>
+    </property>
+    <addaction name="actionbox"/>
+    <addaction name="actionunbox"/>
+   </widget>
+   <widget class="QMenu" name="menuCache">
+    <property name="title">
+     <string>Recode</string>
+    </property>
+    <addaction name="actioncount"/>
+    <addaction name="actionstater"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionabout_pai"/>
+   </widget>
+   <widget class="QMenu" name="menuAnnotation">
+    <property name="title">
+     <string>Annotation</string>
+    </property>
+    <addaction name="actionbar_infor"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menutools_t"/>
+   <addaction name="menuscence_s"/>
+   <addaction name="menupai_a"/>
+   <addaction name="menuline_l"/>
+   <addaction name="menueffct"/>
+   <addaction name="menuMode"/>
+   <addaction name="menuAnnotation"/>
+   <addaction name="menuGenerate"/>
+   <addaction name="menuCache"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionnew">
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>new a project</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionopen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionexit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionbox">
+   <property name="text">
+    <string>Box</string>
+   </property>
+  </action>
+  <action name="actionline_mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Line Mode</string>
+   </property>
+  </action>
+  <action name="actionplane_mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Plane Mode</string>
+   </property>
+  </action>
+  <action name="actionsettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actioncalc">
+   <property name="text">
+    <string>Calc</string>
+   </property>
+  </action>
+  <action name="actionview_mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>View Mode</string>
+   </property>
+  </action>
+  <action name="actionabout_pai">
+   <property name="text">
+    <string>About </string>
+   </property>
+  </action>
+  <action name="actionAI_bar_2">
+   <property name="text">
+    <string>AI bar 2</string>
+   </property>
+  </action>
+  <action name="actionline">
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionlabel">
+   <property name="text">
+    <string>Label</string>
+   </property>
+  </action>
+  <action name="actioncount">
+   <property name="text">
+    <string>Count</string>
+   </property>
+  </action>
+  <action name="actionhole_1">
+   <property name="text">
+    <string>hole 1</string>
+   </property>
+  </action>
+  <action name="actionhole_2">
+   <property name="text">
+    <string>hole 2</string>
+   </property>
+  </action>
+  <action name="actionhole_4">
+   <property name="text">
+    <string>hole 4</string>
+   </property>
+  </action>
+  <action name="actioninsulator">
+   <property name="text">
+    <string>Insulator</string>
+   </property>
+  </action>
+  <action name="actionbusbar_clamp">
+   <property name="text">
+    <string>Busbar Clamp</string>
+   </property>
+  </action>
+  <action name="actionsnake_bar">
+   <property name="text">
+    <string>snake bar</string>
+   </property>
+  </action>
+  <action name="actionship_bar">
+   <property name="text">
+    <string>ship bar</string>
+   </property>
+  </action>
+  <action name="actionL_elephant_bar_2">
+   <property name="text">
+    <string>L elephant bar</string>
+   </property>
+  </action>
+  <action name="actionR_elephant_bar_2">
+   <property name="text">
+    <string>R elephant bar</string>
+   </property>
+  </action>
+  <action name="actionI_bar">
+   <property name="text">
+    <string>I bar</string>
+   </property>
+  </action>
+  <action name="actionL_bar_2">
+   <property name="text">
+    <string>L bar</string>
+   </property>
+  </action>
+  <action name="actionU_bar_2">
+   <property name="text">
+    <string>U bar</string>
+   </property>
+  </action>
+  <action name="actionZ_bar_3">
+   <property name="text">
+    <string>Z bar</string>
+   </property>
+  </action>
+  <action name="actionAI_bar_1">
+   <property name="text">
+    <string>AI bar 1</string>
+   </property>
+  </action>
+  <action name="actionAI_bar_3">
+   <property name="text">
+    <string>AI bar 2</string>
+   </property>
+  </action>
+  <action name="actionstater">
+   <property name="text">
+    <string>Stater</string>
+   </property>
+  </action>
+  <action name="actionunbox">
+   <property name="text">
+    <string>Unbox</string>
+   </property>
+  </action>
+  <action name="actionbar_infor">
+   <property name="text">
+    <string>Bar Info</string>
+   </property>
+  </action>
+  <action name="actionhole">
+   <property name="text">
+    <string>Hole</string>
+   </property>
+  </action>
+  <action name="actionbroken_line">
+   <property name="text">
+    <string>Broken Line</string>
+   </property>
+  </action>
+  <action name="actionauto_label">
+   <property name="text">
+    <string>Auto Label</string>
+   </property>
+  </action>
+  <action name="actiontml">
+   <property name="text">
+    <string>tmy</string>
+   </property>
+  </action>
+  <action name="actionlmy">
+   <property name="text">
+    <string>lmy</string>
+   </property>
+  </action>
+  <action name="action1_bar">
+   <property name="text">
+    <string>bar 1</string>
+   </property>
+  </action>
+  <action name="actionbar_2">
+   <property name="text">
+    <string>bar 2</string>
+   </property>
+  </action>
+  <action name="action15_3">
+   <property name="text">
+    <string>15*3</string>
+   </property>
+  </action>
+  <action name="action30_4">
+   <property name="text">
+    <string>30*4</string>
+   </property>
+  </action>
+  <action name="action40_4">
+   <property name="text">
+    <string>40*4</string>
+   </property>
+  </action>
+  <action name="action50_5">
+   <property name="text">
+    <string>50*5</string>
+   </property>
+  </action>
+  <action name="action60_6">
+   <property name="text">
+    <string>60*6</string>
+   </property>
+  </action>
+  <action name="action80_8">
+   <property name="text">
+    <string>80*8</string>
+   </property>
+  </action>
+  <action name="action80_10">
+   <property name="text">
+    <string>80*10</string>
+   </property>
+  </action>
+  <action name="action100_8">
+   <property name="text">
+    <string>100*8</string>
+   </property>
+  </action>
+  <action name="action100_10">
+   <property name="text">
+    <string>100*10</string>
+   </property>
+  </action>
+  <action name="action120_10">
+   <property name="text">
+    <string>120*10</string>
+   </property>
+  </action>
+  <action name="action125_10">
+   <property name="text">
+    <string>125*10</string>
+   </property>
+  </action>
+  <action name="action100_200_A">
+   <property name="text">
+    <string>KS100A</string>
+   </property>
+  </action>
+  <action name="actionKS200A">
+   <property name="text">
+    <string>KS200A</string>
+   </property>
+  </action>
+  <action name="actionKS400A">
+   <property name="text">
+    <string>KS400A</string>
+   </property>
+  </action>
+  <action name="actionKS600A">
+   <property name="text">
+    <string>KS600A</string>
+   </property>
+  </action>
+  <action name="actionKS1000A">
+   <property name="text">
+    <string>KS1000A</string>
+   </property>
+  </action>
+  <action name="actionKS1500A">
+   <property name="text">
+    <string>KS1500A</string>
+   </property>
+  </action>
+  <action name="actionKS2000A">
+   <property name="text">
+    <string>KS2000A</string>
+   </property>
+  </action>
+  <action name="actionKS2500A">
+   <property name="text">
+    <string>KS2500A</string>
+   </property>
+  </action>
+  <action name="actionM_bar">
+   <property name="text">
+    <string>M bar</string>
+   </property>
+  </action>
+  <action name="actionMCCB">
+   <property name="text">
+    <string>MCCB</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
