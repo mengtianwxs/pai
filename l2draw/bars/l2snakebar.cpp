@@ -3,7 +3,7 @@
 l2snakebar::l2snakebar(float width, float height, float upd, float dod)
 {
 
-
+    this->setData(1,"l2snakebar");
     this->width=width;
     this->height=height;
     this->upd=upd;
@@ -23,9 +23,10 @@ void l2snakebar::draw(){
    path.lineTo(0,upd);
    path.lineTo(width,upd+mid);
    path.lineTo(width,height);
-
-
    this->setPath(path);
+
+
+
    //qDebug("this is draw fun");
 }
 

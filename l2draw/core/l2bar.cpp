@@ -3,8 +3,11 @@
 l2bar::l2bar()
 {
    pen=QPen();
-   pen.setWidth(4);
+   pen.setWidth(8);
    pen.setColor(QColor(255,0,0));
+
+
+
    this->setFlags(QGraphicsItem::ItemIsSelectable|QGraphicsItem::ItemIsMovable);
    this->setPen(pen);
 

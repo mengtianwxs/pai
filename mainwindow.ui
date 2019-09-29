@@ -6,21 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1158</width>
-    <height>664</height>
+    <width>1276</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout"/>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1158</width>
-     <height>26</height>
+     <width>1276</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -59,7 +61,7 @@
     </widget>
     <widget class="QMenu" name="menushapes">
      <property name="title">
-      <string>Shapes</string>
+      <string>Size</string>
      </property>
      <addaction name="action15_3"/>
      <addaction name="action30_4"/>
@@ -100,16 +102,14 @@
      </property>
      <addaction name="actionsnake_bar"/>
      <addaction name="actionship_bar"/>
-     <addaction name="actionL_elephant_bar_2"/>
-     <addaction name="actionR_elephant_bar_2"/>
+     <addaction name="actionL_elephant_bar"/>
+     <addaction name="actionR_elephant_bar"/>
      <addaction name="actionI_bar"/>
-     <addaction name="actionL_bar_2"/>
-     <addaction name="actionU_bar_2"/>
-     <addaction name="actionZ_bar_3"/>
+     <addaction name="actionL_bar"/>
+     <addaction name="actionU_bar"/>
+     <addaction name="actionZ_bar"/>
      <addaction name="actionM_bar"/>
      <addaction name="separator"/>
-     <addaction name="actionAI_bar_1"/>
-     <addaction name="actionAI_bar_3"/>
     </widget>
     <widget class="QMenu" name="menuKnife_Switch">
      <property name="title">
@@ -154,6 +154,8 @@
     </property>
     <addaction name="actionbox"/>
     <addaction name="actionunbox"/>
+    <addaction name="separator"/>
+    <addaction name="actionGird"/>
    </widget>
    <widget class="QMenu" name="menuCache">
     <property name="title">
@@ -174,11 +176,17 @@
     </property>
     <addaction name="actionbar_infor"/>
    </widget>
+   <widget class="QMenu" name="menuPlane">
+    <property name="title">
+     <string>Plane</string>
+    </property>
+   </widget>
    <addaction name="menu"/>
    <addaction name="menutools_t"/>
    <addaction name="menuscence_s"/>
    <addaction name="menupai_a"/>
    <addaction name="menuline_l"/>
+   <addaction name="menuPlane"/>
    <addaction name="menueffct"/>
    <addaction name="menuMode"/>
    <addaction name="menuAnnotation"/>
@@ -312,12 +320,12 @@
     <string>ship bar</string>
    </property>
   </action>
-  <action name="actionL_elephant_bar_2">
+  <action name="actionL_elephant_bar">
    <property name="text">
     <string>L elephant bar</string>
    </property>
   </action>
-  <action name="actionR_elephant_bar_2">
+  <action name="actionR_elephant_bar">
    <property name="text">
     <string>R elephant bar</string>
    </property>
@@ -327,17 +335,17 @@
     <string>I bar</string>
    </property>
   </action>
-  <action name="actionL_bar_2">
+  <action name="actionL_bar">
    <property name="text">
     <string>L bar</string>
    </property>
   </action>
-  <action name="actionU_bar_2">
+  <action name="actionU_bar">
    <property name="text">
     <string>U bar</string>
    </property>
   </action>
-  <action name="actionZ_bar_3">
+  <action name="actionZ_bar">
    <property name="text">
     <string>Z bar</string>
    </property>
@@ -505,6 +513,16 @@
   <action name="actionMCCB">
    <property name="text">
     <string>MCCB</string>
+   </property>
+  </action>
+  <action name="actionShapes">
+   <property name="text">
+    <string>Shapes</string>
+   </property>
+  </action>
+  <action name="actionGird">
+   <property name="text">
+    <string>Gird</string>
    </property>
   </action>
  </widget>

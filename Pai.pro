@@ -9,7 +9,7 @@ QT += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Pai
+TARGET = pai
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -39,7 +39,9 @@ SOURCES += \
     l2draw/bars/l2zbar.cpp \
     l2draw/bars/l2shipbar.cpp \
     l2draw/bars/l2ibar.cpp \
-    l2draw/core/l2scene.cpp
+    l2draw/l2view.cpp \
+    l2draw/l2manager.cpp \
+    l2draw/widgets/l2snakewidget.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -57,7 +59,9 @@ HEADERS += \
     l2draw/bars/l2zbar.h \
     l2draw/bars/l2shipbar.h \
     l2draw/bars/l2ibar.h \
-    l2draw/core/l2scene.h
+    l2draw/l2view.h \
+    l2draw/l2manager.h \
+    l2draw/widgets/l2snakewidget.h
 
 FORMS += \
         mainwindow.ui

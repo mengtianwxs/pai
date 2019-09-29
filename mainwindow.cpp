@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QVBoxLayout>
+#include <l2draw/l2view.h>
+#include <l2draw/widgets/l2snakewidget.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,6 +21,49 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::method_viewclick(QPoint p)
+{
+
+    QPointF objpoint=view->mapToScene(p);
+    QGraphicsItem* item=scene->itemAt(objpoint,view->transform());
+    if(item!=NULL)  {
+        qDebug()<<item<<"thsi is item" <<item->data(1);
+        if(item->data(1).toString()=="l2snakebar"){
+
+            qDebug()<<"this is l2 bar";
+        }
+        QString con=item->data(1).toString();
+        struct bar{
+            int snake;
+
+        }b={1};
+
+        switch (1) {
+        case (b.snake):
+             qDebug()<<"this is l2 bar==";
+             int num=tabWidget->count();
+             if(num<1){
+                 l2snakewidget* wid=new l2snakewidget();
+                 tabWidget->addTab(wid,"snakebar");
+
+             }
+
+
+
+            break;
+
+
+        }
+
+    }
+
+
+
+
+
+
+}
+
 void MainWindow::on_actionabout_pai_triggered()
 {
     QString dlgTitle="about pai";
@@ -30,7 +76,6 @@ void MainWindow::on_actionnew_triggered()
 {
 
 
-  scene->clear();
   QString create_sql="create table if not exists student (id INTEGER PRIMARY KEY AUTOINCREMENT,name varchar(30),age int)";
   QString insert_sql="insert into student (name,age) values('aabb',22)";
   l2db* db =new l2db();
@@ -50,11 +95,13 @@ void MainWindow::on_actionnew_triggered()
 }
 
 void MainWindow::initMainWindow(){
+this->centralWidget()->setLayout(new QVBoxLayout());
+//    this->setLayout(new QVBoxLayout());
+
 //qDebug("this is initMainWindow method");
+view=new l2view(this);
+scene=new QGraphicsScene();
 
-
-view=new QGraphicsView(this);
-scene=new l2scene();
 view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 view->setRenderHint(QPainter::Antialiasing);
@@ -64,17 +111,26 @@ view->resize(this->width()-hnum,this->height());
 scene->setSceneRect(0,vnum,this->width()-hnum,this->height());
 view->setScene(scene);
 
+connect(view,SIGNAL(onclickview(QPoint)),this,SLOT(method_viewclick(QPoint)));
+
+tabWidget=new QTabWidget(this);
+tabWidget->resize(300,this->height()-vnum);
+tabWidget->move(this->width()-300,vnum);
+tabWidget->setStyleSheet("background-color:rgb(ccc,ccc,ccc)");
+
+
 
 //添加右侧tab键
-tabWid=new QTabWidget(this);
-tabWid->resize(300,this->height()-vnum);
-tab1=new QWidget();
-tab2=new QWidget();
-tabWid->addTab(tab1,"tab1");
+//tabWid=new QTabWidget(this);
+//tabWid->resize(300,this->height()-vnum);
+//tab1=new QWidget();
+//tab2=new QWidget();
+//tabWid->addTab(tab1,"tab1");
 //tabWid->addTab(tab2,"tab2");
-tabWid->setCurrentIndex(0);
-tabWid->setCurrentIndex(1);
-tabWid->move(this->width()-300,vnum);
+//tabWid->setCurrentIndex(0);
+//tabWid->setCurrentIndex(1);
+//tabWid->move(this->width()-300,vnum);
+
 
 
 }
@@ -117,8 +173,8 @@ void MainWindow::on_actionexit_triggered()
 
 void MainWindow::on_actionM_bar_triggered()
 {
-    l2mbar* mbar=new l2mbar(300,200,60,80);
-    scene->addItem(mbar);
+//    l2mbar* mbar=new l2mbar(300,200,60,80);
+//    scene->addItem(mbar);
 
 }
 
@@ -126,47 +182,47 @@ void MainWindow::on_actionM_bar_triggered()
 
 void MainWindow::on_actionL_elephant_bar_2_triggered()
 {
-    l2lebar* le=new l2lebar(100,400,50,200,200);
-    scene->addItem(le);
-    qDebug()<<"this is le click";
+//    l2lebar* le=new l2lebar(100,400,50,200,200);
+//    scene->addItem(le);
+//    qDebug()<<"this is le click";
 }
 
 void MainWindow::on_actionR_elephant_bar_2_triggered()
 {
-    l2rebar* re=new l2rebar(200,400,50,150,40);
-    scene->addItem(re);
-    qDebug()<<"this is re click";
+//    l2rebar* re=new l2rebar(200,400,50,150,40);
+//    scene->addItem(re);
+//    qDebug()<<"this is re click";
 }
 
 void MainWindow::on_actionL_bar_2_triggered()
 {
-    l2lbar* l=new l2lbar(200,400);
-    scene->addItem(l);
+//    l2lbar* l=new l2lbar(200,400);
+//    scene->addItem(l);
 }
 
 
 
 void MainWindow::on_actionZ_bar_3_triggered()
 {
-    l2zbar* z=new l2zbar(100,300,80);
-    scene->addItem(z);
+//    l2zbar* z=new l2zbar(100,300,80);
+//    scene->addItem(z);
 }
 
 void MainWindow::on_actionship_bar_triggered()
 {
-    l2shipbar* ship=new l2shipbar(200,100,400,40,50,20,50);
-    scene->addItem(ship);
+//    l2shipbar* ship=new l2shipbar(200,100,400,40,50,20,50);
+//    scene->addItem(ship);
 }
 
 void MainWindow::on_actionI_bar_triggered()
 {
-    l2ibar* i=new l2ibar(200);
-    scene->addItem(i);
-    i->moveBy(100,100);
+//    l2ibar* i=new l2ibar(200);
+//    scene->addItem(i);
+//    i->moveBy(100,100);
 }
 
 void MainWindow::on_actionU_bar_2_triggered()
 {
-    l2ubar* u=new l2ubar(100,300,50);
-    scene->addItem(u);
+//    l2ubar* u=new l2ubar(100,300,50);
+//    scene->addItem(u);
 }
