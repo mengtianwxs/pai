@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
 //    this->setStyleSheet("background-color:#ccc");
     initMainWindow();
 
+     connect(this,SIGNAL(sig_bardata(l2bar*)),SLOT(method_item(l2bar*)));
+
+
 
 }
 
@@ -24,38 +27,46 @@ MainWindow::~MainWindow()
 void MainWindow::method_viewclick(QPoint p)
 {
 
-    QPointF objpoint=view->mapToScene(p);
-    QGraphicsItem* item=scene->itemAt(objpoint,view->transform());
-    if(item!=NULL)  {
-        qDebug()<<item<<"thsi is item" <<item->data(1);
-        if(item->data(1).toString()=="l2snakebar"){
+//    QPointF objpoint=view->mapToScene(p);
+//    QGraphicsItem* item=scene->itemAt(objpoint,view->transform());
+//    if(item!=NULL)  {
 
-            qDebug()<<"this is l2 bar";
-        }
-        QString con=item->data(1).toString();
-        struct bar{
-            int snake;
-
-        }b={1};
-
-        switch (1) {
-        case (b.snake):
-             qDebug()<<"this is l2 bar==";
-             int num=tabWidget->count();
-             if(num<1){
-                 l2snakewidget* wid=new l2snakewidget();
-                 tabWidget->addTab(wid,"snakebar");
-
-             }
+//        qDebug()<<item<<"thsi is item" <<item->data(1);
+//        if(item->data(1).toString()=="l2snakebar"){
 
 
 
-            break;
+//            qDebug()<<"this is l2 bar";
+
+//            int num=tabWidget->count();
+//            if(num<1){
+//                l2snakewidget* wid=new l2snakewidget();
+//                tabWidget->addTab(wid,"snakebar");
+
+//            }
+//        }
+
+//        QString con=item->data(1).toString();
 
 
-        }
+//        switch (1) {
+//        case (b.snake):
+//             qDebug()<<"this is l2 bar==";
+//             int num=tabWidget->count();
+//             if(num<1){
+//                 l2snakewidget* wid=new l2snakewidget();
+//                 tabWidget->addTab(wid,"snakebar");
 
-    }
+//             }
+
+
+
+//            break;
+
+
+//        }
+
+//    }
 
 
 
@@ -95,9 +106,8 @@ void MainWindow::on_actionnew_triggered()
 }
 
 void MainWindow::initMainWindow(){
-this->centralWidget()->setLayout(new QVBoxLayout());
-//    this->setLayout(new QVBoxLayout());
 
+    this->setWindowTitle("pai");
 //qDebug("this is initMainWindow method");
 view=new l2view(this);
 scene=new QGraphicsScene();
@@ -114,7 +124,9 @@ view->setScene(scene);
 connect(view,SIGNAL(onclickview(QPoint)),this,SLOT(method_viewclick(QPoint)));
 
 tabWidget=new QTabWidget(this);
-tabWidget->resize(300,this->height()-vnum);
+
+//tabWidget->sizeHint();
+tabWidget->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 tabWidget->move(this->width()-300,vnum);
 tabWidget->setStyleSheet("background-color:rgb(ccc,ccc,ccc)");
 
@@ -135,6 +147,41 @@ tabWidget->setStyleSheet("background-color:rgb(ccc,ccc,ccc)");
 
 }
 
+void MainWindow::method_item(l2bar* bar)
+{
+
+
+
+//  QObject* obj=bar;
+    l2snakebar* snake=(l2snakebar*)(bar);
+     qDebug()<<"this is bar"<<snake->width<<"snake width";
+    int num=tabWidget->count();
+    if(num<1){
+
+
+        l2snakewidget* wid=new l2snakewidget(snake);
+        tabWidget->addTab(wid,"snakebar");
+        tabWidget->resize(300,200 );
+        connect(wid,SIGNAL(sig_emitsnake(double,double,double,double)),this,SLOT(method_redrawsnake(double,double,double,double)));
+
+    }
+}
+
+void MainWindow::method_redrawsnake(double w, double h, double upd, double dod)
+{
+   if(scene->items().count()>0){
+    scene->clear();
+   }
+
+    l2snakebar* bar=new l2snakebar(w,h,upd,dod);
+    scene->addItem(bar);
+    bar->setPos(QPointF((this->width()-hnum)/2,this->height()/2));
+    bar->moveBy(-150,-200);
+
+     emit sig_bardata(bar);
+
+}
+
 
 
 
@@ -145,6 +192,12 @@ void MainWindow::on_actionsnake_bar_triggered()
     scene->addItem(bar);
     bar->setPos(QPointF((this->width()-hnum)/2,this->height()/2));
     bar->moveBy(-150,-200);
+
+     emit sig_bardata(bar);
+
+
+
+
 }
 
 void MainWindow::on_actionline_mode_triggered()

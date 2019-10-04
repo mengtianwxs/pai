@@ -5,6 +5,7 @@
 
 class l2snakebar : public l2bar
 {
+
 public:
 
     explicit l2snakebar(float width,float height,float upd,float dod);
@@ -12,7 +13,7 @@ public:
 //    void keyPressEvent(QKeyEvent *event);
     void draw();
 
-private:
+public:
     float upd;//上边距 up distance
     float dod;//下边距 down distance
     float mid;//中距

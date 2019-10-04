@@ -82,6 +82,13 @@ private:
      QGraphicsScene *scene;
      QTabWidget* tabWidget;
 
+signals:
+     void sig_bardata(l2bar* bar);
+
+private slots:
+     void method_item(l2bar* bar);
+     void method_redrawsnake(double w,double h,double upd ,double dod);
+
 
 
 

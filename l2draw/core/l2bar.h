@@ -16,6 +16,7 @@
 
 class l2bar : public QGraphicsPathItem
 {
+
 public:
     l2bar();
     QPen pen;
